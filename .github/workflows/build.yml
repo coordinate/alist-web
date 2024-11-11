@@ -51,6 +51,7 @@ jobs:
           cd alist-web
           pnpm install
           pnpm build
+          ls
           cd ..
         # env:
         #   CROWDIN_PROJECT_ID: ${{ secrets.CROWDIN_PROJECT_ID }}
@@ -80,4 +81,4 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: alist_web
-          path: dist
+          path: alist-web/dist
