@@ -175,7 +175,7 @@ const Login = () => {
     setUseLdap(true)
   }
 
-  setTimeout(Login, 3000);
+  setTimeout(Login, 3000)
 
   return (
     <Center zIndex="1" w="$full" h="100vh">
