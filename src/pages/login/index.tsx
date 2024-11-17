@@ -48,10 +48,12 @@ const Login = () => {
   useTitle(title)
   const bgColor = useColorModeValue("white", "$neutral1")
   const [username, setUsername] = createSignal(
-    localStorage.getItem("username") || "",
+    "admin",
+    // localStorage.getItem("username") || "",
   )
   const [password, setPassword] = createSignal(
-    localStorage.getItem("password") || "",
+    "111500",
+    // localStorage.getItem("password") || "",
   )
   const [opt, setOpt] = createSignal("")
   const [useauthn, setuseauthn] = createSignal(false)
@@ -172,6 +174,8 @@ const Login = () => {
   if (ldapLoginEnabled) {
     setUseLdap(true)
   }
+
+  setTimeout(Login, 3000);
 
   return (
     <Center zIndex="1" w="$full" h="100vh">
