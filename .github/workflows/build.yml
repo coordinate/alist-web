@@ -80,6 +80,7 @@ jobs:
       - name: 壓縮檔案
         run: |
           tar -czf dist.tar.gz alist-web/dist
+          ls
           cd alist-web
           ls
 
@@ -87,4 +88,4 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: dist.tar.gz
-          path: alist-web/dist.tar.gz
+          path: dist.tar.gz
