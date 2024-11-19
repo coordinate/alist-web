@@ -57,6 +57,7 @@ export type ConvertURLArgs = {
 }
 
 export const convertURL = (scheme: string, args: ConvertURLArgs) => {
+  console.log(args)
   let ans = scheme
   ans = ans.replace("$name", args.name)
   if (args.ts) {
@@ -93,6 +94,7 @@ export const convertURL = (scheme: string, args: ConvertURLArgs) => {
     }
     return u
   })
+  console.log(ans)
   return ans
 }
 
