@@ -19,40 +19,40 @@ Artplayer.PLAYBACK_RATE = [0.5, 0.75, 1, 1.25, 1.5, 2, 3, 4]
 
 export const players: { icon: string; name: string; scheme: string }[] = [
   { icon: "iina", name: "IINA", scheme: "iina://weblink?url=$edurl" },
-  { icon: "potplayer", name: "PotPlayer", scheme: "potplayer://$durl" },
-  { icon: "vlc", name: "VLC", scheme: "vlc://$durl" },
-  { icon: "nplayer", name: "nPlayer", scheme: "nplayer-$durl" },
+  { icon: "potplayer", name: "PotPlayer", scheme: "potplayer://$url" },
+  { icon: "vlc", name: "VLC", scheme: "vlc://$url" },
+  { icon: "nplayer", name: "nPlayer", scheme: "nplayer-$url" },
   {
     icon: "omniplayer",
     name: "OmniPlayer",
-    scheme: "omniplayer://weblink?url=$durl",
+    scheme: "omniplayer://weblink?url=$url",
   },
   {
     icon: "figplayer",
     name: "Fig Player",
-    scheme: "figplayer://weblink?url=$durl",
+    scheme: "figplayer://weblink?url=$url",
   },
   {
     icon: "infuse",
     name: "Infuse",
-    scheme: "infuse://x-callback-url/play?url=$durl",
+    scheme: "infuse://x-callback-url/play?url=$url",
   },
   {
     icon: "fileball",
     name: "Fileball",
-    scheme: "filebox://play?url=$durl",
+    scheme: "filebox://play?url=$url",
   },
   {
     icon: "mxplayer",
     name: "MX Player",
     scheme:
-      "intent:$durl#Intent;package=com.mxtech.videoplayer.ad;S.title=$name;end",
+      "intent:$url#Intent;package=com.mxtech.videoplayer.ad;S.title=$name;end",
   },
   {
     icon: "mxplayer-pro",
     name: "MX Player Pro",
     scheme:
-      "intent:$durl#Intent;package=com.mxtech.videoplayer.pro;S.title=$name;end",
+      "intent:$url#Intent;package=com.mxtech.videoplayer.pro;S.title=$name;end",
   },
 ]
 
