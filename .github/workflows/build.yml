@@ -79,7 +79,7 @@ jobs:
 
       - name: 壓縮檔案
         run: |
-          tar -czf dist.tar.gz dist
+          tar -czf dist.tar.gz alist-web/dist
 
       - name: Upload artifact
         uses: actions/upload-artifact@v4
