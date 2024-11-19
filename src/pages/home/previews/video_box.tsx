@@ -85,6 +85,7 @@ export const VideoBox = (props: {
   let videos = objStore.objs.filter((obj) => obj.type === ObjType.VIDEO)
   if (videos.length === 0) {
     videos = [objStore.obj]
+    console.log(videos)
   }
   const t = useT()
   let autoNext = localStorage.getItem("video_auto_next")
