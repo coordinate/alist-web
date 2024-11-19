@@ -77,15 +77,15 @@ jobs:
       #     repository: alist-org/web-dist
       #     force: true
 
-      - name: 壓縮檔案
+      - name: gzip dist
         run: |
-          tar -czf dist.tar.gz alist-web/dist
-          ls
           cd alist-web
+          tar -czf dist.tar.gz dist
           ls
+          cd ..
 
       - name: Upload artifact
         uses: actions/upload-artifact@v4
         with:
-          name: dist.tar.gz
+          name: dist
           path: dist.tar.gz
