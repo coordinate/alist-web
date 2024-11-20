@@ -17,6 +17,7 @@ import { SelectWrapper } from "~/components"
 
 Artplayer.PLAYBACK_RATE = [0.5, 0.75, 1, 1.25, 1.5, 2, 3, 4]
 
+// ******************************
 export const players: { icon: string; name: string; scheme: string }[] = [
   { icon: "iina", name: "IINA", scheme: "iina://weblink?url=$edurl" },
   { icon: "potplayer", name: "PotPlayer", scheme: "potplayer://$url" },
@@ -55,6 +56,7 @@ export const players: { icon: string; name: string; scheme: string }[] = [
       "intent:$url#Intent;package=com.mxtech.videoplayer.pro;S.title=$name;end",
   },
 ]
+// ******************************
 
 export const AutoHeightPlugin = (player: Artplayer) => {
   const { $container, $video } = player.template
