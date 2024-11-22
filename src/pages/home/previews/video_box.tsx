@@ -146,18 +146,27 @@ export const VideoBox = (props: {
           }}
         </For>
       </Flex>
-      <Anchor href={convertURL("vlc://$durl", {
-                    raw_url: objStore.raw_url,
-                    name: objStore.obj.name,
-                    d_url: currentObjLink(true),
-                  })} external>
+      <Anchor
+        href={convertURL("vlc://$durl", {
+          raw_url: objStore.raw_url,
+          name: objStore.obj.name,
+          d_url: currentObjLink(true),
+        })}
+        external
+      >
         {currentObjLink(true)}
       </Anchor>
-      <Anchor href={convertURL("intent:$durl#Intent;package=com.mxtech.videoplayer.ad;S.title=$name;end", {
-                    raw_url: objStore.raw_url,
-                    name: objStore.obj.name,
-                    d_url: currentObjLink(true),
-                  })} external>
+      <Anchor
+        href={convertURL(
+          "intent:$durl#Intent;package=com.mxtech.videoplayer.ad;S.title=$name;end",
+          {
+            raw_url: objStore.raw_url,
+            name: objStore.obj.name,
+            d_url: currentObjLink(true),
+          },
+        )}
+        external
+      >
         {currentObjLink(true)}
       </Anchor>
     </VStack>
