@@ -6,7 +6,6 @@ import {
   Tooltip,
   HStack,
   Switch,
-  Link
 } from "@hope-ui/solid"
 import { For, JSXElement } from "solid-js"
 import { useRouter, useLink, useT } from "~/hooks"
@@ -20,41 +19,41 @@ Artplayer.PLAYBACK_RATE = [0.5, 0.75, 1, 1.25, 1.5, 2, 3, 4]
 
 // ******************************
 export const players: { icon: string; name: string; scheme: string }[] = [
-  { icon: "iina", name: "IINA", scheme: "iina://weblink?url=$edurl" },
-  { icon: "potplayer", name: "PotPlayer", scheme: "potplayer://$url" },
-  { icon: "vlc", name: "VLC", scheme: "vlc://$url" },
-  { icon: "nplayer", name: "nPlayer", scheme: "nplayer-$url" },
+  { icon: "iina", name: "IINA", scheme: "iina://weblink?url=$durl" },
+  { icon: "potplayer", name: "PotPlayer", scheme: "potplayer://$durl" },
+  { icon: "vlc", name: "VLC", scheme: "vlc://$durl" },
+  { icon: "nplayer", name: "nPlayer", scheme: "nplayer-$durl" },
   {
     icon: "omniplayer",
     name: "OmniPlayer",
-    scheme: "omniplayer://weblink?url=$url",
+    scheme: "omniplayer://weblink?url=$durl",
   },
   {
     icon: "figplayer",
     name: "Fig Player",
-    scheme: "figplayer://weblink?url=$url",
+    scheme: "figplayer://weblink?url=$durl",
   },
   {
     icon: "infuse",
     name: "Infuse",
-    scheme: "infuse://x-callback-url/play?url=$url",
+    scheme: "infuse://x-callback-url/play?url=$durl",
   },
   {
     icon: "fileball",
     name: "Fileball",
-    scheme: "filebox://play?url=$url",
+    scheme: "filebox://play?url=$durl",
   },
   {
     icon: "mxplayer",
     name: "MX Player",
     scheme:
-      "intent:$url#Intent;package=com.mxtech.videoplayer.ad;S.title=$name;end",
+      "intent:$durl#Intent;package=com.mxtech.videoplayer.ad;S.title=$name;end",
   },
   {
     icon: "mxplayer-pro",
     name: "MX Player Pro",
     scheme:
-      "intent:$url#Intent;package=com.mxtech.videoplayer.pro;S.title=$name;end",
+      "intent:$durl#Intent;package=com.mxtech.videoplayer.pro;S.title=$name;end",
   },
 ]
 // ******************************
@@ -147,9 +146,20 @@ export const VideoBox = (props: {
           }}
         </For>
       </Flex>
-      <Link href={currentObjLink(true)} color="primary" isExternal>
+      <Anchor href={convertURL("vlc://$durl", {
+                    raw_url: objStore.raw_url,
+                    name: objStore.obj.name,
+                    d_url: currentObjLink(true),
+                  })} external>
         {currentObjLink(true)}
-      </Link>
+      </Anchor>
+      <Anchor href={convertURL("intent:$durl#Intent;package=com.mxtech.videoplayer.ad;S.title=$name;end", {
+                    raw_url: objStore.raw_url,
+                    name: objStore.obj.name,
+                    d_url: currentObjLink(true),
+                  })} external>
+        {currentObjLink(true)}
+      </Anchor>
     </VStack>
   )
 }
