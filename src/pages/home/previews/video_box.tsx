@@ -6,7 +6,7 @@ import {
   Tooltip,
   HStack,
   Switch,
-  Link
+  Link,
 } from "@hope-ui/solid"
 import { For, JSXElement } from "solid-js"
 import { useRouter, useLink, useT } from "~/hooks"
