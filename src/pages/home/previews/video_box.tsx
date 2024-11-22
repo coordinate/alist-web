@@ -6,6 +6,7 @@ import {
   Tooltip,
   HStack,
   Switch,
+  Link
 } from "@hope-ui/solid"
 import { For, JSXElement } from "solid-js"
 import { useRouter, useLink, useT } from "~/hooks"
@@ -146,6 +147,9 @@ export const VideoBox = (props: {
           }}
         </For>
       </Flex>
+      <Link href={currentObjLink(true)} color="primary" isExternal>
+        {currentObjLink(true)}
+      </Link>
     </VStack>
   )
 }
