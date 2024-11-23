@@ -21,7 +21,7 @@ Artplayer.PLAYBACK_RATE = [0.5, 0.75, 1, 1.25, 1.5, 2, 3, 4]
 export const players: { icon: string; name: string; scheme: string }[] = [
   { icon: "iina", name: "IINA", scheme: "iina://weblink?url=$durl" },
   { icon: "potplayer", name: "PotPlayer", scheme: "potplayer://$durl" },
-  { icon: "vlc", name: "VLC", scheme: "vlc://$durl" },
+  { icon: "vlc", name: "VLC", scheme: "vlc://$edurl" },
   { icon: "nplayer", name: "nPlayer", scheme: "nplayer-$durl" },
   {
     icon: "omniplayer",
@@ -47,7 +47,7 @@ export const players: { icon: string; name: string; scheme: string }[] = [
     icon: "mxplayer",
     name: "MX Player",
     scheme:
-      "intent:$durl#Intent;package=com.mxtech.videoplayer.ad;S.title=$name;end",
+      "intent:$edurl#Intent;package=com.mxtech.videoplayer.ad;S.title=$name;end",
   },
   {
     icon: "mxplayer-pro",
@@ -147,7 +147,7 @@ export const VideoBox = (props: {
         </For>
       </Flex>
       <Anchor
-        href={convertURL("vlc://$durl", {
+        href={convertURL("vlc://$edurl", {
           raw_url: objStore.raw_url,
           name: objStore.obj.name,
           d_url: currentObjLink(true),
@@ -158,7 +158,7 @@ export const VideoBox = (props: {
       </Anchor>
       <Anchor
         href={convertURL(
-          "intent:$durl#Intent;package=com.mxtech.videoplayer.ad;S.title=$name;end",
+          "intent:$edurl#Intent;package=com.mxtech.videoplayer.ad;S.title=$name;end",
           {
             raw_url: objStore.raw_url,
             name: objStore.obj.name,
