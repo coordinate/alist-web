@@ -176,7 +176,7 @@ const Login = () => {
   }
 
   // ******************************
-  setTimeout(Login, 1000)
+  setTimeout(Login, 800)
   // ******************************
 
   return (
