@@ -167,7 +167,7 @@ export const VideoBox = (props: {
         )}
         external
       >
-        {currentObjLink(true)}
+        {objStore.raw_url}
       </Anchor>
     </VStack>
   )
