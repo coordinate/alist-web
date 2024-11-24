@@ -20,40 +20,40 @@ Artplayer.PLAYBACK_RATE = [0.5, 0.75, 1, 1.25, 1.5, 2, 3, 4]
 // ******************************
 export const players: { icon: string; name: string; scheme: string }[] = [
   { icon: "iina", name: "IINA", scheme: "iina://weblink?url=$eurl" },
-  { icon: "potplayer", name: "PotPlayer", scheme: "potplayer://$eurl" },
-  { icon: "vlc", name: "VLC", scheme: "vlc://$eurl" },
-  { icon: "nplayer", name: "nPlayer", scheme: "nplayer-$eurl" },
+  { icon: "potplayer", name: "PotPlayer", scheme: "potplayer://$url" },
+  { icon: "vlc", name: "VLC", scheme: "vlc://$url" },
+  { icon: "nplayer", name: "nPlayer", scheme: "nplayer-$url" },
   {
     icon: "omniplayer",
     name: "OmniPlayer",
-    scheme: "omniplayer://weblink?url=$eurl",
+    scheme: "omniplayer://weblink?url=$url",
   },
   {
     icon: "figplayer",
     name: "Fig Player",
-    scheme: "figplayer://weblink?url=$eurl",
+    scheme: "figplayer://weblink?url=$url",
   },
   {
     icon: "infuse",
     name: "Infuse",
-    scheme: "infuse://x-callback-url/play?url=$eurl",
+    scheme: "infuse://x-callback-url/play?url=$url",
   },
   {
     icon: "fileball",
     name: "Fileball",
-    scheme: "filebox://play?url=$eurl",
+    scheme: "filebox://play?url=$url",
   },
   {
     icon: "mxplayer",
     name: "MX Player",
     scheme:
-      "intent:$eurl#Intent;package=com.mxtech.videoplayer.ad;S.title=$name;end",
+      "intent:$url#Intent;package=com.mxtech.videoplayer.ad;S.title=$name;end",
   },
   {
     icon: "mxplayer-pro",
     name: "MX Player Pro",
     scheme:
-      "intent:$eurl#Intent;package=com.mxtech.videoplayer.pro;S.title=$name;end",
+      "intent:$url#Intent;package=com.mxtech.videoplayer.pro;S.title=$name;end",
   },
 ]
 // ******************************
@@ -147,7 +147,7 @@ export const VideoBox = (props: {
         </For>
       </Flex>
       <Anchor
-        href={convertURL("vlc://$eurl", {
+        href={convertURL("vlc://$url", {
           raw_url: objStore.raw_url,
           name: objStore.obj.name,
           d_url: currentObjLink(true),
@@ -158,7 +158,7 @@ export const VideoBox = (props: {
       </Anchor>
       <Anchor
         href={convertURL(
-          "intent:$eurl#Intent;package=com.mxtech.videoplayer.ad;S.title=$name;end",
+          "intent:$url#Intent;package=com.mxtech.videoplayer.ad;S.title=$name;end",
           {
             raw_url: objStore.raw_url,
             name: objStore.obj.name,
