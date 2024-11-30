@@ -156,19 +156,6 @@ export const VideoBox = (props: {
       >
         {objStore.raw_url}
       </Anchor>
-      <Anchor
-        href={convertURL(
-          "intent:$url#Intent;package=com.mxtech.videoplayer.ad;S.title=$name;end",
-          {
-            raw_url: objStore.raw_url,
-            name: objStore.obj.name,
-            d_url: currentObjLink(true),
-          },
-        )}
-        external
-      >
-        {objStore.raw_url}
-      </Anchor>
     </VStack>
   )
 }
