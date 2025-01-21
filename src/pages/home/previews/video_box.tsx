@@ -55,6 +55,11 @@ export const players: { icon: string; name: string; scheme: string }[] = [
     scheme:
       "intent:$url#Intent;package=com.mxtech.videoplayer.pro;S.title=$name;end",
   },
+  {
+    icon: "iPlay",
+    name: "iPlay",
+    scheme: "iplay://play/any?type=url&url=$bdurl",
+  },
 ]
 // ******************************
 
