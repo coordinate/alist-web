@@ -90,8 +90,9 @@ export const fsMove = (
 export const fsRecursiveMove = (
   src_dir: string,
   dst_dir: string,
+  conflict_policy: boolean,
 ): PEmptyResp => {
-  return r.post("/fs/recursive_move", { src_dir, dst_dir })
+  return r.post("/fs/recursive_move", { src_dir, dst_dir, conflict_policy })
 }
 
 export const fsCopy = (
@@ -176,7 +177,7 @@ export const fsArchiveList = (
 export const fsArchiveDecompress = (
   src_dir: string,
   dst_dir: string,
-  name: string,
+  name: string[],
   archive_pass = "",
   inner_path = "/",
   cache_full = true,

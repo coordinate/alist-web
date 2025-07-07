@@ -1,18 +1,18 @@
 import {
   NavigateOptions,
+  SetParams,
   useLocation,
   useNavigate,
   useParams,
-  useSearchParams,
+  _mergeSearchString,
 } from "@solidjs/router"
-import { createMemo } from "solid-js"
+import { createMemo, untrack } from "solid-js"
 import { encodePath, joinBase, log, pathDir, pathJoin, trimBase } from "~/utils"
 import { clearHistory } from "~/store"
 
 const useRouter = () => {
   const navigate = useNavigate()
   const location = useLocation()
-  const [searchParams, setSearchParams] = useSearchParams()
   const params = useParams()
   const pathname = createMemo(() => {
     return trimBase(location.pathname)
@@ -31,7 +31,9 @@ const useRouter = () => {
       navigate(path, options)
     },
     replace: (to: string) => {
-      navigate(encodePath(pathJoin(pathDir(location.pathname), to), true))
+      const path = encodePath(pathJoin(pathDir(location.pathname), to), true)
+      clearHistory(decodeURIComponent(path))
+      navigate(path)
     },
     pushHref: (to: string): string => {
       return encodePath(pathJoin(pathname(), to))
@@ -43,8 +45,21 @@ const useRouter = () => {
       navigate(1)
     },
     pathname: pathname,
-    searchParams: searchParams,
-    setSearchParams: setSearchParams,
+    search: location.search,
+    searchParams: location.query,
+    setSearchParams: (
+      params: SetParams,
+      options?: Partial<NavigateOptions>,
+    ) => {
+      const searchString = untrack(() =>
+        _mergeSearchString(location.search, params),
+      )
+      navigate(pathname() + searchString, {
+        scroll: false,
+        ...options,
+        resolve: true,
+      })
+    },
     params: params,
   }
 }
