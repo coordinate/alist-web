@@ -27,6 +27,7 @@ export default defineConfig({
   base: process.env.NODE_ENV === "production" ? "/__dynamic_base__/" : "/",
   // base: "/",
   build: {
+    sourcemap: true,
     // target: "es2015", //next
     // polyfillDynamicImport: false,
   },
